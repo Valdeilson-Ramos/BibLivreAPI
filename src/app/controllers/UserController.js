@@ -1,11 +1,13 @@
-const { User } = require('../models/index')
+const User = require('../models/User')
 
 class UserController {
   async store (req, res) {
-    const user = await User.create(req.body)
+    const user = await User.create({
+      ...req.body
+    })
     return res.status(200).json({
-      user,
-      msg: 'Usuário Cadastrado com sucesso!'
+      msg: 'Usuário Cadastrado com sucesso!',
+      user
     })
   }
 

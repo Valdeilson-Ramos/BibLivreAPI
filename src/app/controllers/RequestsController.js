@@ -1,4 +1,4 @@
-const { Requests } = require('../models/index')
+const Requests = require('../models/Requests')
 
 class RequestsController {
   async store (req, res) {

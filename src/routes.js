@@ -1,18 +1,18 @@
 const express = require('express')
-const UserController = require('./app/controllers/UserController')
-const RequestsController = require('./app/controllers/RequestsController')
+const controllers = require('./app/controllers')
 
 const routes = express.Router()
 
 routes.get('/', (req, res) => {
-  res.send('BibLivre 5')
+  res.send('Bem Vindo ao BibLivre IFMA')
 })
 
-routes.post('/register', UserController.store)
-routes.get('/users', UserController.list)
+// Requests Routes
+routes.get('/requests', controllers.RequestsController.list)
+routes.post('/requests/new', controllers.RequestsController.store)
 
-// Requests
-routes.get('/requests', RequestsController.list)
-routes.post('/requests/create', RequestsController.store)
+// User Routes
+routes.get('/users', controllers.UserController.list)
+routes.post('/user/new', controllers.UserController.store)
 
 module.exports = routes

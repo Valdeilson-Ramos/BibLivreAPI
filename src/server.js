@@ -1,4 +1,5 @@
 const express = require('express')
+const db = require('./config/database')
 
 class App {
   constructor () {
@@ -9,7 +10,18 @@ class App {
     this.routes()
   }
 
-  database () {}
+  database () {
+    db.authenticate()
+      .then(() => {
+        console.log('Conectado com sucesso ao Banco de Dados.')
+      })
+      .catch(error => {
+        console.log('Falha ao conectar ao Banco de Dados:', {
+          msg: 'Log',
+          error
+        })
+      })
+  }
 
   middleware () {
     this.express.use(express.json())

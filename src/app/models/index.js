@@ -1,4 +1,4 @@
-const fs = require('fs')
+/* const fs = require('fs')
 const path = require('path')
 const Sequelize = require('sequelize')
 const config = require('../../config/database')
@@ -39,7 +39,6 @@ sequelize
 
 db.sequelize = sequelize
 db.Sequelize = Sequelize
-db.user = require('./User')(sequelize, Sequelize)
-db.requests = require('./Requests')(sequelize, Sequelize)
 
 module.exports = db
+ */
