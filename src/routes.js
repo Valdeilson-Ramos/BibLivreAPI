@@ -15,4 +15,25 @@ routes.post('/requests/new', controllers.RequestsController.store)
 routes.get('/users', controllers.UserController.list)
 routes.post('/user/new', controllers.UserController.store)
 
+// Users Types
+routes.get('/user/types', controllers.UsersTypesController.listUsersTypes)
+
+// Users Fields
+routes.get('/user/fields', controllers.UsersFieldsController.listUsersFields) // Erro não encontra o ID
+
+// Biblio Records
+routes.get('/biblio/records', controllers.BiblioAllController.listBiblioRecords)
+
+routes.post(
+  '/biblio/records/new',
+  controllers.BiblioAllController.storeBiblioRecords
+)
+
+// Reservations
+routes.get('/reservations', controllers.ReservationsController.listReservations)
+routes.post(
+  '/reservation/new',
+  controllers.ReservationsController.reservationCreate
+)
+
 module.exports = routes

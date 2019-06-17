@@ -42,3 +42,4 @@ db.Sequelize = Sequelize
 
 module.exports = db
  */
+module.exports = require('require-dir')()
