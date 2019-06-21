@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
-module.exports = new Sequelize('biblivre4', 'postgres', 'postgres', {
+module.exports = new Sequelize('biblivre4', 'postgres', 'abracadabra', {
   host: 'localhost',
-  port: '54320',
+  port: '5432',
   dialect: 'postgres',
   define: {
     timestamps: false
