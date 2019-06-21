@@ -1,8 +1,8 @@
-const User = require('../models/User')
+const Model = require('../models')
 
 class UserController {
   async store (req, res) {
-    const user = await User.create({
+    const user = await Model.User.create({
       ...req.body
     })
     return res.status(200).json({
@@ -11,8 +11,16 @@ class UserController {
     })
   }
 
+  async listUsersValues (req, res) {
+    const usersValuesList = await Model.UsersValues.findAll()
+    return res.status(200).json({
+      msg: 'Complementos cadastro usuário',
+      usersValuesList
+    })
+  }
+
   async list (req, res) {
-    const users = await User.findAll()
+    const users = await Model.User.findAll()
     return res.status(200).json({
       msg: 'Listando todos os usuários',
       users
