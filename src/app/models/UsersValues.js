@@ -3,7 +3,7 @@ const db = require('../../config/database')
 const UserValues = db.define(
   'users_values',
   {
-    // user_id: Sequelize.INTEGER,
+    user_id: Sequelize.INTEGER,
     key: Sequelize.STRING,
     value: Sequelize.STRING,
     ascii: Sequelize.STRING
